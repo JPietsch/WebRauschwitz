@@ -74,21 +74,21 @@ class Constructor {
     switch ($this->view){
       case "view":
         $this->title	= $this->title ?? TITLE;
-        $this->modfile	= frontend . "/pages/view.php";
+        $this->modfile	= FRONTEND . "/pages/view.php";
         $this->cssfiles = array_merge();
         $this->jsfiles	= array_merge();
         break;
 
       case "login":
         $this->title	= $this->title ?? TITLE_ADMIN;
-        $this->modfile	= frontend . "/pages/login.php";
+        $this->modfile	= FRONTEND . "/pages/login.php";
         $this->cssfiles = array_merge();
         $this->jsfiles	= array_merge();
         break;
 
       case "admin":
         $this->title	= $this->title ?? TITLE_ADMIN;
-        $this->modfile	= frontend . "/pages/admin.php";
+        $this->modfile	= FRONTEND . "/pages/admin.php";
         $this->cssfiles = array_merge();
         $this->jsfiles	= array_merge();
         break;
@@ -96,7 +96,7 @@ class Constructor {
       default: return false;
     }
 
-    include_once frontend . "/blueprint.php";
+    include_once FRONTEND . "/blueprint.php";
     return true;
   }
 

@@ -1,1 +1,1 @@
-<?php require_once frontend . "/pages/views/" . "$constr->viewfile"; ?>
+<?php require_once FRONTEND . "/pages/views/" . "$constr->viewfile"; ?>

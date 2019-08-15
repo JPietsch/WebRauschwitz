@@ -1,1 +1,1 @@
-<?php require_once frontend . "/pages/admin/" . "$constr->viewfile"; ?>
+<?php require_once FRONTEND . "/pages/admin/" . "$constr->viewfile"; ?>

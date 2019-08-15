@@ -1,9 +1,9 @@
 <?php
 
 require_once 'config.php';
-require_once backend . '/constructor.php';
-require_once backend . '/dbConnect.php';
-require_once backend . '/login.php';
+require_once BACKEND . '/constructor.php';
+require_once BACKEND . '/dbConnect.php';
+require_once BACKEND . '/login.php';
 
 $_constr = Constructor::getInstance();
 $_constr->view = "view";
