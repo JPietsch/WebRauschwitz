@@ -1,5 +1,9 @@
 <?php
 
+// ############################################################################
+// CONSTRUCTOR CLASS - CREATES THE 'PAGE-VARIABLES' BASED ON THE URL
+// ############################################################################
+
 class Constructor {
 
   private static $_instance = null;
@@ -13,12 +17,12 @@ class Constructor {
   public $cssfiles          = [];
   public $jsfiles       	  = [];
 
-  protected function __construct(){
+  protected function __construct() {
     self::$_instance = $this;
   }
 
-  public function build(){
-    if ($_GET[0] == "admin"){
+  public function build() {
+    if ($_GET[0] == "admin") {
       switch ($_GET[1]) {
 
         default:
@@ -37,7 +41,7 @@ class Constructor {
           $this->viewfile = "email.html";
           break;
       }
-    }else {
+    } else {
       switch ($_GET[0]) {
         default:
           $this->headline = "Startseite";
@@ -71,7 +75,7 @@ class Constructor {
       }
     }
 
-    switch ($this->view){
+    switch ($this->view) {
       case "view":
         $this->title	= $this->title ?? TITLE;
         $this->modfile	= FRONTEND . "/pages/view.php";
@@ -96,12 +100,12 @@ class Constructor {
       default: return false;
     }
 
-    include_once FRONTEND . "/blueprint.php";
+    include_once FRONTEND . '/blueprint.php';
     return true;
   }
 
   static public function getInstance() {
-    if (self::$_instance === null){
+    if (self::$_instance === null) {
       self::$_instance = new Constructor();
     }
 		return self::$_instance;

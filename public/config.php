@@ -1,22 +1,30 @@
 <?php
 
-# Zeitzone und -format
-date_default_timezone_set('Europe/Berlin');
-define('DATETIME', 'Y-m-d H:i:s');
+// ############################################################################
+// TIMEZONE AND -SET
+// ############################################################################
 
-# Titel
-define('TITLE', 'Webseite Rauschwitz');
-define('TITLE_ADMIN', 'Admin');
+date_default_timezone_set("Europe/Berlin");
+define("DATETIME", "Y-m-d H:i:s");
 
-# Datenbank
+// ############################################################################
+// TITLE OF THE WEBSITE
+// ############################################################################
+
+define("TITLE", "Webseite Rauschwitz");
+define("TITLE_ADMIN", "Admin");
+
+// ############################################################################
+// INCLUDING THE THE DATABASECONFIGURATION
+// ############################################################################
+
 require_once 'secure/dbConfig.php';
 
-/* # Session
-session_name("__SessID");
-session_start(); */
+// ############################################################################
+// DIRECTORYS
+// ############################################################################
 
-# Verzeichnisse
-define('BACKEND',	__DIR__ . '/../backend');
-define('FRONTEND',	__DIR__ . '/../frontend');
+define("BACKEND",	__DIR__ . "/../backend");
+define("FRONTEND",	__DIR__ . "/../frontend");
 
 ?>
