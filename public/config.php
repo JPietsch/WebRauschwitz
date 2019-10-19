@@ -1,11 +1,27 @@
 <?php
 
 // ############################################################################
+// SESSION
+// ############################################################################
+
+session_name("SessID");
+session_start();
+
+// ############################################################################
+// GENERAL INFORMATIONS
+// ############################################################################
+
+define("AUTHOR", "Jonas Pietsch");
+define("KEYWORDS", "Rauschwitz, Kindisch, Gödlau, Elstra");
+define("DESCRIPTION", "Dies ist die offizielle Webseite
+  der Gemeinden Rauschwitz, Kindisch, Gödlau");
+
+// ############################################################################
 // TIMEZONE AND -SET
 // ############################################################################
 
 date_default_timezone_set("Europe/Berlin");
-define("DATETIME", "Y-m-d H:i:s");
+define("DATE", "Y-m-d");
 
 // ############################################################################
 // TITLE OF THE WEBSITE
@@ -26,5 +42,6 @@ require_once 'secure/dbConfig.php';
 
 define("BACKEND",	__DIR__ . "/../backend");
 define("FRONTEND",	__DIR__ . "/../frontend");
+
 
 ?>

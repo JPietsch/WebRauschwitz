@@ -10,7 +10,12 @@ $constr = Constructor::getInstance();
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8">
+  <meta name="theme-color" content="">
+  <meta name="author" content="<?=AUTHOR?>">
+  <meta name="keywords" content="<?=KEYWORDS?>">
+  <meta name="description" content="<?=DESCRIPTION?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>
     <?=$constr->headline?$constr->headline . " - " : null?>
     <?=$constr->title?>
@@ -43,7 +48,13 @@ $constr = Constructor::getInstance();
 </head>
 <body>
   <div id="wrapper">
-    <?php require_once "$constr->modfile"; ?>
+    <?php
+      $login = new login();
+      if ($login->checkLogin()) {
+        include_once "pages/header.html";
+      }
+      require_once "$constr->modfile";
+    ?>
   </div>
 </body>
 </html>

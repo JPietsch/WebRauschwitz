@@ -28,49 +28,78 @@ class Constructor {
         default:
         case "dashboard":
           $this->headline = "Dashboard";
-          $this->viewfile = "dashboard.html";
+          $this->viewfile = "dashboard.php";
           break;
 
         case "posts":
           $this->headline = "Posts";
-          $this->viewfile = "posts.html";
+          $this->viewfile = "posts.php";
+
+          if ($_GET[2] == "create"){
+            $this->headline = "Create Post";
+            $this->viewfile = "posts/create.php";
+          }
+
+          if ($_GET[2] == "edit"){
+            $this->headline = "Edit Post";
+            $this->viewfile = "posts/edit.php";
+          }
           break;
 
         case "email":
           $this->headline = "Email";
-          $this->viewfile = "email.html";
+          $this->viewfile = "email.php";
+          break;
+
+        case "users":
+          $this->headline = "Users";
+          $this->viewfile = "users.php";
+
+          if ($_GET[2] == "create"){
+            $this->headline = "Create User";
+            $this->viewfile = "users/create.php";
+          }
+
+          if ($_GET[2] == "edit"){
+            $this->headline = "Edit User";
+            $this->viewfile = "users/edit.php";
+          }
           break;
       }
     } else {
       switch ($_GET[0]) {
         default:
+          # Erorr 404
+          break;
+
+        case "":
           $this->headline = "Startseite";
-          $this->viewfile = "start.html";
+          $this->viewfile = "start.php";
           break;
 
         case "allgemeines":
           $this->headline = "Allgemeines";
-          $this->viewfile = "allgemeines.html";
+          $this->viewfile = "allgemeines.php";
           break;
 
         case "bildergalerie":
           $this->headline = "Bildergalerie";
-          $this->viewfile = "bildergalerie.html";
+          $this->viewfile = "bildergalerie.php";
           break;
 
         case "sportfest":
           $this->headline = "Sportfest";
-          $this->viewfile = "sportfest.html";
+          $this->viewfile = "sportfest.php";
           break;
 
         case "kontakt":
           $this->headline = "Kontakt";
-          $this->viewfile = "kontakt.html";
+          $this->viewfile = "kontakt.php";
           break;
 
         case "impressum":
           $this->headline = "Impressum";
-          $this->viewfile = "impressum.html";
+          $this->viewfile = "impressum.php";
           break;
       }
     }
